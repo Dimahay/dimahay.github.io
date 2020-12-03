@@ -2,9 +2,9 @@ const addItems = document.querySelector(".add-items");
 const itemsList = document.querySelector(".plates");
 const emptyList = document.querySelector(".empty-list");
 const items = JSON.parse(localStorage.getItem("items")) || [];
-
 addItems.addEventListener("submit", addItem);
 itemsList.addEventListener("click", toggleDone);
+emptyList.addEventListener("click", removeItems);
 function addItem(event) {
   event.preventDefault();
   const text = this.querySelector("[name='item']").value;
@@ -28,6 +28,11 @@ function toggleDone(event) {
   populateList(items, itemsList);
 }
 function populateList(plates = [], platesList) {
+  if (plates.length <= 0) {
+    emptyList.style.display = "none";
+  } else {
+    emptyList.style.display = "initial";
+  }
   platesList.innerHTML = plates
     .map((plate, index) => {
       return `
@@ -42,8 +47,10 @@ function populateList(plates = [], platesList) {
     .join("");
 }
 function removeItems() {
+  emptyList.style.display = "none";
   itemsList.innerHTML = "";
-  items.lenght;
+  items.length = 0;
+  localStorage.removeItem("items");
 }
 
 populateList(items, itemsList);
