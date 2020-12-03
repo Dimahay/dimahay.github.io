@@ -1,6 +1,6 @@
 html {
 	box-sizing: border-box;
-	background-image: url("img/oh-la-la.jpeg");
+	background-image: url("img/oh-la-la.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -9,31 +9,59 @@ html {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: 'Varela', sans-serif;
 }
+
+body{
+	background-image: linear-gradient(to top right, #5C12A6, #7F25D9 );
+	padding-top: 60px;
+	border-radius: 20px;
+	min-width: 50%;
+}
+
+
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
-svg {
-	fill: #ffffff;
-	background: rgba(0, 0, 0, 0.1);
-	padding: 20px;
-	border-radius: 50%;
-	width: 200px;
-	margin-bottom: 50px;
+
+.top{
+		margin: 20px 20px 40px 20px;
 }
+
+h1{
+	color: #F2E205;
+	font-size: 42px;
+	line-height: 80%;
+	font-family: 'Varela Round', sans-serif;
+}
+
+h3{
+color: rgb(230, 230, 230);
+font-size: 14px;
+font-weight: 300;
+}
+
+svg {
+	fill: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 200px;
+}
+
+
 .wrapper {
-	padding: 20px;
-	max-width: 350px;
-	background: rgba(255,255,255,0.95);
-	box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+	padding: 60px 80px 60px 80px;
+	width: 100%;
+	background: rgba(255,255,255, 1);
+	border-radius: 20px;
 }
 h2 {
 	text-align: center;
-	margin: 0;
-	font-weight: 200;
+	margin-bottom: 20px;
+	color: rgb(129, 129, 129);
+	font-weight: 100;
 }
 .plates {
 	margin: 0;
@@ -55,21 +83,52 @@ h2 {
 	display: none;
 }
 .plates input + label::before {
-	content: "⬜";
+	content: "🐡";
 	margin-right: 10px;
 }
 .plates input:checked + label::before {
-	content: "🌮";
+	content: "🍣";
 }
 .plates input:checked + label span {
 	text-decoration: line-through;
 	color: rgba(0,0,0,0.5);
 }
 .add-items {
-	margin-top: 20px;
+	margin-top: 60px;
+	display: flex;
+	vertical-align: center;
 }
 .add-items input {
-	padding: 10px;
-	outline: 0;
-	border: 1px solid rgba(0,0,0,0.1);
+	outline: 22px;
+	border: 1px solid #F2E205;
+	height: 40px;
+}
+input#testo{
+	width: 80%;
+}
+input#bottone{
+	padding: 6px;
+	background-color: #F2E205;
+	border-radius: 0;
+	width: 30%;
+	margin-left: 15px;
+}
+@media screen and (max-width: 600px) {
+
+	.add-items{
+		display: block;
+	}
+	input#bottone{
+		width: 100%;
+		margin: 0;
+		margin-top: 5px;
+
+	}
+	input#testo {
+		width: 100%;
+			margin: 0;
+	}
+	.wrapper {
+		padding: 30px 30px 60px 30px;
+	}
 }
